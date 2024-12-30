@@ -1,0 +1,5 @@
+defaults: 
+ - base
+name: identity
+mesh_prior_use_same_as_data: true
+use_high_res_mesh_for_rep: false

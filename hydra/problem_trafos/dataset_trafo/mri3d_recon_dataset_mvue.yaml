@@ -1,0 +1,22 @@
+name: mri3d
+
+mask_enabled : true
+mask_type: Poisson2D
+mask_accelerations: 4.0
+mask_center_fractions: [0.08]
+mask_seed: 1234
+which_challenge: 'multicoil'
+use_real_synth_data: False
+scale_target_by_kspacenorm: False 
+target_scaling_factor: 1.0
+normalize_target: False
+multicoil_reduction_op: 'sum'
+target_interpolate_by_factor: 1.0
+target_type: mvue # fully_sampled_rec, rss, mvue
+return_magnitude_image: false
+return_cropped_pseudoinverse: false
+pseudoinverse_conv_averaging_shape: null
+target_interpolation_method : "nearest"
+wrapped_2d : false
+use_seed : true
+return_pseudoinverse_as_observation : false

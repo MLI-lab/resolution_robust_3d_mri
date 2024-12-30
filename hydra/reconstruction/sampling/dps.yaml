@@ -1,0 +1,6 @@
+defaults:
+  - base
+  
+name: dps
+scale: 0.01
+score_derivative: True

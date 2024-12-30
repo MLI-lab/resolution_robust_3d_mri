@@ -1,0 +1,22 @@
+name: mri2d
+
+which_challenge: 'multicoil'
+mask_enabled : false
+mask_type: random
+mask_accelerations: 4.0
+mask_center_fractions: [0.08]
+mask_seed: 1234
+use_seed:  true
+use_real_synth_data : False
+return_magnitude_image : False
+return_cropped_pseudoinverse : False
+scale_target_by_kspacenorm : True
+target_scaling_factor :  2.0
+target_random_crop_size : null
+normalize_target :  False
+target_type : "fullysampled_rec"
+pseudoinverse_conv_averaging_shape : null
+multicoil_reduction_op : "norm_sum_sensmaps"
+target_interpolate_by_factor : 1.0
+target_interpolate_factor_is_interval : true
+target_interpolate_method : "bilinear"

@@ -1,0 +1,21 @@
+# @package _global_
+defaults:
+  - stanford_3D/base_recon
+  - override /representation: identity
+  - override /reconstruction: default_variational_lpw
+
+reconstruction:
+  variational:
+    fitting:
+      optimizer:
+        iterations: 80
+        lr: 1.0
+      lr_scheduler:
+        factor: 0.5
+        patience: 5
+    regularization:
+      reg_strength: 5e-10
+
+problem_trafos:
+  prior_trafo:
+    scaling_factor: 1.0

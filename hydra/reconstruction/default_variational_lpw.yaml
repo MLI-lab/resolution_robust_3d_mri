@@ -1,0 +1,7 @@
+defaults:
+  - base
+  - variational/fitting: default
+  - variational/regularization: lpwavelet
+  - slice_methods: none
+
+method: 'variational'

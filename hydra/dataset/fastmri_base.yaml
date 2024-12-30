@@ -1,0 +1,38 @@
+defaults:
+  - base
+
+name: FastMRIDataset
+
+data_path_train: ???
+data_path_val:   ???
+data_path_test:  ???
+
+data_path_sensmaps_train: null
+data_path_sensmaps_val:   null
+data_path_sensmaps_test:  null
+
+volume_filter_train: ".*"
+volume_filter_val:   ".*"
+volume_filter_test:  ".*"
+
+challenge: ???
+data_object_type: ???
+
+raw_sample_filter:
+  enabled: False
+  slice_inds: [16,17]
+  encoding_size: 320
+  
+readout_dim: ???
+readout_dim_is_spatial: ???
+readout_dim_keep_spatial: ???
+apply_fft1c_on_readout_dim: ???
+dataset_is_3d: ???
+sensemap_3d_slice_from_fixed_view: ???
+overwrite_sensmap_files: False
+transpose_2D_slice : [False, False, False]
+sensmap_coil_dim_first : True
+smap_suffix: "_sensmap"
+smap_prefix: ""
+recons_key: "reconstruction_rss"
+sensmaps_key_in_h5: null # "sensitivity_maps"

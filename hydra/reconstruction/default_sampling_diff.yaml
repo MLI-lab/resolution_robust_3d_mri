@@ -1,0 +1,6 @@
+defaults:
+  - base
+  - sampling: dds
+  - slice_methods: none
+
+method: 'sampling'

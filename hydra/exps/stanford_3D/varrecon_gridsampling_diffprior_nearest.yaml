@@ -1,0 +1,15 @@
+# @package _global_
+defaults:
+  - stanford_3D/base_recon
+  - override /representation: grid_sampled
+  - override /reconstruction: default_variational_diff
+  - override /sample_logger: with_target
+
+representation:
+  interpolation_mode: 'nearest'
+
+reconstruction:
+  variational:
+    fitting:
+      optimizer:
+        lr: 4.0

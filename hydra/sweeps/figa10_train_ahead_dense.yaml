@@ -1,0 +1,17 @@
+# @package _global_
+defaults:
+  - /exps: ahead/train_dense
+  - override /hydra/launcher: ray
+
+hydra:
+  sweeper:
+    params:
+      +exps: ahead/train_dense
+      ++problem_trafos.dataset_trafo.target_interpolate_by_factor: 0.25,0.5,1.0,[0.1,1.0]
+  launcher:
+    ray:
+      remote:
+        num_gpus: 1
+
+note: ""
+descr_short: "figa10_train_ahead_dense_${problem_trafos.dataset_trafo.target_interpolate_by_factor}"

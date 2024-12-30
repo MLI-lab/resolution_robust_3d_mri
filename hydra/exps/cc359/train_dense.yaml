@@ -1,0 +1,13 @@
+# @package _global_
+defaults:
+  - cc359/base_training
+  - override /sample_logger: without_target
+  - override /diffmodels: default_dense_cached
+
+diffmodels:
+  arch:
+    channel_mult: [1, 2, 3, 4, 4]
+    in_channels:  2
+    out_channels: 2
+    num_channels: 32
+    num_res_blocks: 2

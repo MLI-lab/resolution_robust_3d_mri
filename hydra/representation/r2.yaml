@@ -1,0 +1,5 @@
+defaults: 
+ - rbase
+
+arch: 
+  in_features: 2

@@ -1,0 +1,30 @@
+defaults:
+  - base
+
+name: "with_target"
+# before / after reconstruction
+foreach_data: true
+final_reco: true
+save_observation: false
+save_filtbackproj: false
+save_ground_truth: false
+save_final_sample: false
+store_k3d_volume: false
+log_gt_fbp_to_wandb: false
+log_3d_include_final_slice_averages_for_volumes: false
+
+# only for logging during reconstruction process
+medslice_stats_period: 5
+volume_stats_period: 10
+volume_stats__wandb_take_mean_slice_period: 10
+volume_stats__wandb_video_period: 1000
+
+# relevant for both
+use_second_cuda: false
+sample_gen_split: 1
+take_abs_normalize: false
+show_phase: false
+log_psnr: true
+log_ssim: false
+log_vifp: false
+log_data_is_complex: true

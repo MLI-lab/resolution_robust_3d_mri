@@ -1,0 +1,9 @@
+method: ??? # 'variational' or 'sampling'
+rescale_observation: True
+constant_scaling_factor : 1.0
+
+num_images: 1
+dataset_start: 0
+
+use_score_regularisation: True
+use_score_pass_through: True

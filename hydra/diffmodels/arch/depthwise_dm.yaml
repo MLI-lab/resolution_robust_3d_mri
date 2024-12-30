@@ -1,0 +1,27 @@
+defaults:
+  - base
+
+name: 'depthwise_dm'
+
+params:
+  channels: 2
+  nf: 64 
+  time_emb_dim: 128
+  img_size: 128
+  num_conv_blocks: 3
+  knn_neighbours: 4
+  uno_res: 64
+  uno_mults: [2, 2, 2]
+  blocks_per_level: [2,2,2]
+  z_dim: null
+  out_channels: null
+  conv_type: "conv"
+  depthwise_sparse: True
+  kernel_size: 11
+  backend: "torchsparse"
+  optimise_dense: True
+  attn_res: []
+  dropout_res: 16
+  dropout: 0.0 
+  uno_base_nf: 64
+  kernel_interpolation_method: "bilinear"

@@ -1,0 +1,10 @@
+name: mri3d
+mask_enabled: True
+mask_type: 'dataset' # -> use the mask provided by the dataset_trafo
+mask_accelerations: null
+mask_center_fractions: null
+mask_seed: null
+include_sensitivitymaps: True
+sensitivitymaps_complex : True
+sensitivitymaps_fillouter : False
+wrapped_2d_mode: False

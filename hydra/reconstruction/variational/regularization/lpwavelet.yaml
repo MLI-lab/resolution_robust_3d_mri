@@ -1,0 +1,8 @@
+defaults:
+  - base
+
+name: 'lpwavelet'
+wavelet_type  : 'Haar'
+wavelet_level : 1
+wavelet_axis : [-4, -2, -1]
+norm_order    : 1

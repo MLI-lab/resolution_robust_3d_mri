@@ -1,0 +1,68 @@
+# @package _global_
+defaults:
+  - /dataset: stanford_3d
+  - override /problem_trafos/fwd_trafo: mri3d
+  - override /problem_trafos/target_trafo: crop_mag
+  - override /problem_trafos/prior_trafo: crop_mag
+  - override /problem_trafos/dataset_trafo: mri3d_recon_calc_mvue
+
+problem_trafos:
+  prior_trafo:
+    scaling_factor: 2.0
+    move_axis: [-1,1]
+
+  dataset_trafo:
+    mask_enabled: True
+    mask_accelerations: ???
+    mask_type: 'Poisson2D'
+
+dataset:
+  fold: 'test'
+  data_object_type: 'volumes'
+
+representation:
+  mesh_data:
+    field_of_view: [153.6, 160, 160]
+
+diffmodels:
+  load_ema_params_from_path:
+    1x_model:
+      default: ???
+    2x_model:
+      default: ???
+    4x_model:
+      default: ???
+    div_model:
+      default: ???
+    2x_infdm_model_bilinear:
+      default: ???
+    2x_infdm_model_fourier:
+      default: ???
+    2x_infdm_model_zeropad:
+      default: ???
+
+  mesh_data_per_model:
+    1x_model:
+      matrix_size: [256, 320, 320]
+      field_of_view: [153.6, 160, 160]
+    2x_model:
+      matrix_size: [128, 160, 160]
+      field_of_view: [153.6, 160, 160]
+    4x_model:
+      matrix_size: [64, 80, 80]
+      field_of_view: [153.6, 160, 160]
+    div_model:
+      matrix_size: null
+      field_of_view: [153.6, 160, 160]
+    2x_infdm_model_bilinear:
+      matrix_size: [128, 160, 160]
+      field_of_view: [153.6, 160, 160]
+    2x_infdm_model_fourier:
+      matrix_size: [128, 160, 160]
+      field_of_view: [153.6, 160, 160]
+    2x_infdm_model_zeropad:
+      matrix_size: [128, 160, 160]
+      field_of_view: [153.6, 160, 160]
+
+  model_key: ???
+  model_use_ema: true

@@ -1,0 +1,53 @@
+# @package _global_
+defaults:
+  - stanford_3D/base_recon
+  - override /representation: r3
+  - override /reconstruction: default_variational_diff
+  - override /sample_logger: with_target
+
+representation:
+  warmstart_optim:
+    lr: 0.01
+    psnr_threshold: 40
+    iterations: 20
+
+  arch:
+    num_hidden_layers: 5
+    first_layer_feats_scale: 8
+    width: 450
+
+sampler_logger:
+  volume_stats_period: 500
+  volume_stats__wandb_take_mean_slice_period: 500
+  
+reconstruction:
+  variational:
+    fitting:
+      optimizer:
+        lr: 0.001
+        iterations:  50000
+        clip_grad_max_norm: null
+        gradient_acc_steps_data_con: [0]
+        gradient_acc_steps_prior_reg: [1,2,3,4]
+
+      lr_scheduler:
+        factor: 0.8
+        patience: 5000
+
+    regularization:
+      reg_strength: 0.0004 
+
+problem_trafos:
+  dataset_trafo:
+    mask_enabled: True
+    mask_accelerations: 16.0
+    mask_type: 'Poisson2D'
+    target_interpolate_by_factor: 0.25
+  
+  fwd_trafo:
+    sensitivitymaps_fillouter: True
+
+
+diffmodels:
+  model_key: '2x_model'
+  model_use_ema: True

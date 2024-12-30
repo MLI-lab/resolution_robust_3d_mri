@@ -1,0 +1,17 @@
+defaults:
+  - default_dense
+
+train:
+  cache_dataset: True
+  cache_dataset_in_gpu: True
+  cache_dataset_store_on_disk: True
+  cache_dataset_load_from_disk: False
+  cache_dataset_disk_path: ${dataset_cache}/${hydra:runtime.choices.dataset}_${problem_trafos.dataset_trafo.target_interpolate_by_factor}.pt
+
+
+val:
+  cache_dataset: True
+  cache_dataset_in_gpu: True
+  cache_dataset_store_on_disk: True
+  cache_dataset_load_from_disk: False
+  cache_dataset_disk_path: ${dataset_cache}/${hydra:runtime.choices.dataset}_${problem_trafos.dataset_trafo.target_interpolate_by_factor}.pt

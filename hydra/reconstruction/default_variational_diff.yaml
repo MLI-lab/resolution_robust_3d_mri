@@ -1,0 +1,7 @@
+defaults:
+  - base
+  - variational/fitting: default
+  - variational/regularization: diffusion
+  - slice_methods: default_slice_prior
+
+method: 'variational'

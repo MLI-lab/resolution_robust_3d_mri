@@ -1,0 +1,17 @@
+# @package _global_
+defaults:
+  - stanford_3D/base_training
+  - override /sample_logger: without_target
+  - override /diffmodels: default_dense_cached
+
+diffmodels:
+  arch:
+    params:
+      channel_mult: [1, 2, 2, 2]
+      in_channels:  2
+      out_channels: 2
+      num_channels: 32
+
+problem_trafos:
+  dataset_trafo:
+    target_interpolate_by_factor: ???

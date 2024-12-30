@@ -1,0 +1,22 @@
+# @package _global_
+defaults:
+  - stanford_3D/base_recon
+  - override /representation: gaussian
+  - override /reconstruction: default_variational_diff
+  - override /sample_logger: with_target
+
+representation:
+  warmstart_optim:
+    warmstart_iters: 100  
+
+  opt_params:
+    subset_size: 400_000
+  
+reconstruction:
+  variational:
+    fitting:
+      optimizer:
+        lr: 0.0
+
+    regularization:
+      reg_strength: 0.01

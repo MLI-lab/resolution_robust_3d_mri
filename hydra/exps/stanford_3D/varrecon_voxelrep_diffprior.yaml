@@ -1,0 +1,11 @@
+# @package _global_
+defaults:
+  - stanford_3D/base_recon
+  - override /representation: identity
+  - override /reconstruction: default_variational_diff
+  - override /sample_logger: with_target
+
+reconstruction:
+  variational:
+    regularization:
+      reg_strength: 0.01

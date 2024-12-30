@@ -1,0 +1,13 @@
+defaults:
+  - lr_scheduler: reduce_lr_plateau
+
+use_filterbackproj_as_init: True
+use_l1wavelet_as_init: False
+optimizer:
+  lr: 2.0
+  iterations: 200
+  clip_grad_max_norm: null
+  gradient_acc_steps_data_con: [0]
+  gradient_acc_steps_prior_reg: [0]
+  skip_iterations: 0
+warmstart_fit: null 

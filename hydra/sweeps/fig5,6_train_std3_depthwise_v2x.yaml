@@ -1,0 +1,17 @@
+# @package _global_
+defaults:
+  - /exps: stanford_3D/train_depthwise
+  - override /hydra/launcher: ray
+
+hydra:
+  sweeper:
+    params:
+      ++problem_trafos.dataset_trafo.target_interpolate_by_factor: 0.5
+      ++diffmodels.arch.params.kernel_interpolation_method: bilinear,fourier,zeropad
+  launcher:
+    ray:
+      remote:
+        num_gpus: 1
+
+note: ""
+descr_short: "fig5,6_train_std3_depthwise_v2x_${problem_trafos.dataset_trafo.target_interpolate_by_factor}_${diffmodels.arch.params.kernel_interpolation_method}"

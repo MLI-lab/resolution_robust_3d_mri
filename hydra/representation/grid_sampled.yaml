@@ -1,0 +1,13 @@
+defaults: 
+ - base
+name: grid_sampled
+
+interpolation_mode: 'bilinear'
+padding_mode: 'zeros'
+align_corners: True
+
+mesh_data:
+  requires_coords: True
+
+mesh_prior:
+  requires_coords: True

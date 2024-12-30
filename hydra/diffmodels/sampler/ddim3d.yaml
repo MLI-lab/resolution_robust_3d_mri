@@ -1,0 +1,4 @@
+defaults:
+  - ddim
+
+sampling_in_3d: true

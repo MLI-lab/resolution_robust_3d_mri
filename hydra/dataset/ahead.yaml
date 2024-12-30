@@ -1,0 +1,28 @@
+defaults:
+  - fastmri_base
+
+data_path_train:
+  default: ???
+data_path_val:
+  default: ???
+data_path_test:
+  default: ???
+
+volume_filter_train: ".*"
+volume_filter_val:   ".*"
+volume_filter_test:  ".*"
+
+challenge: 'multicoil'
+
+perspective_order: ['sag', 'ax', 'cor']
+data_object_type: 'volumes'
+
+sensemap_3d_slice_from_fixed_view: True
+readout_dim: 0
+readout_dim_is_spatial: True
+apply_fft1c_on_readout_dim: True
+apply_fft1c_on_readout_dim_shifts: [True, True]
+readout_dim_keep_spatial: False
+dataset_is_3d: True
+recons_key: 'reconstruction_mvue'
+sensmaps_key_in_h5: "sensitivity_maps"

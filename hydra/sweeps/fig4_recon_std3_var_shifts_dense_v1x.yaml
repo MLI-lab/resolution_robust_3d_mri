@@ -1,0 +1,19 @@
+# @package _global_
+defaults:
+  - /exps: stanford_3D/varrecon_voxelrep_diffprior
+  - override /hydra/launcher: ray
+
+hydra:
+  sweeper:
+    params:
+      +diffmodels.model_key: 1x_model,2x_model,4x_model,div_model
+      ++problem_trafos.dataset_trafo.target_interpolate_by_factor: 1.0
+      ++problem_trafos.dataset_trafo.mask_accelerations: 4.0,8.0,12.0,16.0,24.0,36.0,48.0
+      ++reconstruction.variational.regularization.reg_strength: 0.01
+  launcher:
+    ray:
+      remote:
+        num_gpus: 1
+
+note: ""
+descr_short: "fig4_v1x_${diffmodels.model_key}_${problem_trafos.dataset_trafo.mask_accelerations}_${reconstruction.variational.regularization.reg_strength}"

@@ -1,0 +1,8 @@
+defaults:
+  - base
+
+name: dds
+alpha: 1.0
+gamma: 0.95
+cg_max_iter: 4
+cg_max_tridiag_iter : 4

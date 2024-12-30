@@ -1,0 +1,9 @@
+defaults:
+  - base
+
+name: 'ReduceLROnPlateau'
+
+mode: 'min'
+factor: 0.5
+patience: 20
+verbose: True

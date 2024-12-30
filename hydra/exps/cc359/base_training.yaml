@@ -1,0 +1,16 @@
+# @package _global_
+defaults:
+  - /dataset: cc359_all
+  - override /problem_trafos/fwd_trafo: null
+  - override /problem_trafos/target_trafo: null
+  - override /problem_trafos/prior_trafo: crop_mag
+  - override /problem_trafos/dataset_trafo: mri2d_train_calc_mvue
+
+problem_trafos:
+  prior_trafo:
+    swap_channels: True
+    scaling_factor: 1.0
+
+dataset:
+  fold: 'train'
+  data_object_type: 'slices'

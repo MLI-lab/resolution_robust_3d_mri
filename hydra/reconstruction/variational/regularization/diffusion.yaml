@@ -1,0 +1,8 @@
+defaults:
+  - base
+
+name: 'diffusion'
+reg_strength: 0.1
+adapt_reg_strength: True
+steps_scaler: 0.4
+time_sampling_method: 'random' # linear_descending

@@ -1,0 +1,54 @@
+# @package _global_
+defaults:
+  - /dataset: ahead
+  - override /problem_trafos/fwd_trafo: mri3d
+  - override /problem_trafos/target_trafo: crop_mag
+  - override /problem_trafos/prior_trafo: crop_mag
+  - override /problem_trafos/dataset_trafo: mri3d_recon_dataset_mvue
+
+problem_trafos:
+  prior_trafo:
+    scaling_factor: 2.0
+    move_axis: [-1,1]
+
+  dataset_trafo:
+    mask_enabled: True
+    mask_accelerations: ???
+    mask_type: 'Gaussian2D'
+    
+
+dataset:
+  fold: 'test'
+  data_object_type: 'volumes'
+
+representation:
+  mesh_data:
+    field_of_view: [164.0, 205.0, 205.0]
+
+diffmodels:
+  load_ema_params_from_path:
+    1x_model:
+      default: ???
+    2x_model:
+      default: ???
+    4x_model:
+      default: ???
+    div_model:
+      default: ???
+  
+  mesh_data_per_model:
+    1x_model:
+      matrix_size: [234, 292, 290]
+      field_of_view: [164.0, 205.0, 205.0]
+    2x_model:
+      matrix_size: [117, 146, 145]
+      field_of_view: [164.0, 205.0, 205.0]
+    4x_model:
+      matrix_size: [58, 73, 72]
+      field_of_view: [164.0, 205.0, 205.0]
+    div_model:
+      matrix_size: null
+      field_of_view: [164.0, 205.0, 205.0]
+
+  model_key: ???
+  model_use_ema: true

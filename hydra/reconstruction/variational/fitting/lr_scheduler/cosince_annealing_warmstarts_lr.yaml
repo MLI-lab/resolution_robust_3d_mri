@@ -1,0 +1,9 @@
+defaults:
+  - base
+
+name: 'CosineAnnealingWarmRestarts'
+verbose: True
+eta_min: 0 # default: 0
+last_epoch: -1 # default: -1
+T_0: 1
+T_mult: 1.2

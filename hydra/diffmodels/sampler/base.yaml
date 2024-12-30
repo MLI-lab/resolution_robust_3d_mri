@@ -1,0 +1,6 @@
+name: ???
+# base sampler settings
+cycling: True
+cycling_skip_conditioning: False
+score_mini_batch_size: 30
+sampling_in_3d: False

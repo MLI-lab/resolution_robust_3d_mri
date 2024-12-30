@@ -1,0 +1,12 @@
+# @package _global_
+defaults:
+  - stanford_3D/base_recon
+  - override /diffmodels/sampler: ddim3d
+  - override /reconstruction: default_sampling_diff
+  - override /representation: identity
+
+diffmodels:
+  sampler:
+    num_steps: 80
+    cycling: True
+    cycling_skip_conditioning: False

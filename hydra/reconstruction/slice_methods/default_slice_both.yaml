@@ -1,0 +1,3 @@
+defaults:
+  - data_con: rnd_slicing
+  - prior_reg: rnd_slicing

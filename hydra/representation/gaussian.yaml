@@ -1,0 +1,38 @@
+defaults: 
+ - base
+name: gaussian
+
+mesh_data:
+  requires_coords: True
+
+mesh_prior:
+  requires_coords: True
+
+warmstart_optim:
+  warmstart_iters: 100
+
+model_params:
+  num_in_features: 3
+  num_out_features : 2
+  is_complex: true
+  use_phase_add_as_imag: True
+
+opt_params:
+  scaling_multiplier: 3.0
+  scaling_multiplier_warmup: 3.0
+  scaling_multiplier_init: 1.0
+  random_subset: True
+  subset_size: 400_000 #12_000_000
+  position_lr_warmup      : 0.01
+  opacity_lr_warmup       : 0.2
+  phase_add_lr_warmup     : 0.2
+  scaling_lr_warmup       : 0.01
+  phase_lr_warmup         : 0.000 
+  rotation_lr_warmup      : 0.005
+  warmup_psnr_threshold   : 35
+  position_lr             : 0.01 # 0.005
+  opacity_lr              : 0.1
+  phase_add_lr            : 0.1
+  scaling_lr              : 0.01 # 0.0025
+  phase_lr                : 0.000 
+  rotation_lr             : 0.005 # 0.0025

@@ -1,0 +1,14 @@
+# @package _global_
+defaults:
+  - stanford_3D/base_training
+  - override /sample_logger: without_target
+  - override /diffmodels: default_depthwise_cached
+
+diffmodels:
+  arch:
+    params:
+      nf: 64 
+      uno_res: 64
+      uno_mults: [2,2,2]
+      blocks_per_level: [2,2,2]
+      kernel_interpolation_method: "bilinear

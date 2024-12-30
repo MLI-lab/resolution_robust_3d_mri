@@ -1,0 +1,30 @@
+defaults:
+ - base
+name: parametric
+
+arch: 
+  in_features: 3
+  out_features: 2
+  num_hidden_layers: 3
+  normalizerelu: true
+  width_from_mesh: false
+  width: 50
+  first_layer_feats_scale: 10
+  first_layer_init_sigma: null
+  init_sigma: 1
+  act_type: relu
+  first_layer_trainable: False
+  first_layer_fmap: true
+  eps: 1e-6
+  final_sigma: 0.01
+
+warmstart_optim:
+  lr: 0.1
+  psnr_threshold: 30
+  iterations: 5000
+
+mesh_data:
+  requires_coords: True
+
+mesh_prior:
+  requires_coords: True

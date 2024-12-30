@@ -1,0 +1,43 @@
+load_params_from_path: null
+load_ema_params_from_path: null
+model_key: null
+model_use_ema: null
+
+train:
+  batch_size: 4
+  epochs: 200
+  log_freq: 10
+  save_model_every_n_epoch: 10
+  use_ema: true
+  ema_warm_start_steps: 500
+  ema_decay: 0.999
+  lr: 1e-4
+  cache_dataset: False
+  cache_dataset_in_gpu: False
+  cache_dataset_load_from_disk: False
+  cache_dataset_store_on_disk: False
+  cache_dataset_disk_path: null
+  cache_dataset_repeats: 1
+  use_batch_sampler_same_shape: True
+  group_shape_by: 'target'
+  shuffle: True
+  num_workers: 0
+  log_dataset_stats_before_training:
+    enabled: False
+    num_dataloader_stat_samples: -1 # has to be negative or multiple of batch size
+    num_dataloader_image_samples: 20 # has to be negative or multiple of batch size
+
+val:
+  batch_size: 4
+  sample_freq: 1
+  num_img_in_sample_log: 5
+  group_shape_by: 'target'
+  shuffle: True
+  num_workers: 0
+  cache_dataset: False
+  cache_dataset_in_gpu: False
+  cache_dataset_repeats: 1 
+  cache_dataset_load_from_disk: False
+  cache_dataset_store_on_disk: False
+  cache_dataset_disk_path: null
+  use_batch_sampler_same_shape: True

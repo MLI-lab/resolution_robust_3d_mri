@@ -1,0 +1,12 @@
+defaults:
+  - base
+
+name: dds_tvz
+gamma: 0.95
+alpha: 1.0
+rho: null
+lamb : 0
+cg_config:
+  max_iter: 2
+  max_tridiag_iter : 2 # must be <= max_iter
+admm_iter: 1

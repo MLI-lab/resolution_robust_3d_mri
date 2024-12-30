@@ -1,0 +1,16 @@
+# @package _global_
+defaults:
+  - /exps: cc359/train_dense
+  - override /hydra/launcher: ray
+
+hydra:
+  sweeper:
+    params:
+      ++problem_trafos.dataset_trafo.target_interpolate_by_factor: 0.25,0.5,1.0,[0.1,1.0]
+  launcher:
+    ray:
+      remote:
+        num_gpus: 1
+
+note: ""
+descr_short: "fig1_train_cc359_dense_${problem_trafos.dataset_trafo.target_interpolate_by_factor}"

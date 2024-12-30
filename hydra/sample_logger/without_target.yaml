@@ -1,0 +1,10 @@
+defaults:
+  - base
+
+name: "without_target"
+foreach_data: false
+final_reco: true
+volume_stats_period: 100
+volume_stats__wandb_take_mean_slice_period: 100
+volume_stats__wandb_video_period: 1000
+show_phase: false

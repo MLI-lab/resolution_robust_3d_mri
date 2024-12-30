@@ -1,0 +1,6 @@
+defaults:
+  - base
+
+name: 'ddim'
+eta: .95
+num_steps: 400

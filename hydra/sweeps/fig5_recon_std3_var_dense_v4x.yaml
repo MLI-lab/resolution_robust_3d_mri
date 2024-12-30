@@ -1,0 +1,26 @@
+# @package _global_
+defaults:
+  - override /hydra/launcher: ray
+
+problem_trafos:
+  dataset_trafo:
+    target_interpolate_by_factor: 0.25
+    mask_accelerations: 16.0
+diffmodels:
+  model_key: 2x_model
+
+hydra:
+  sweeper:
+    params:
+      +exps: stanford_3D/varrecon_gridsampling_diffprior,stanford_3D/varrecon_gaussian_diffprior,stanford_3D/varrecon_inn_diffprior
+      ++problem_trafos.dataset_trafo.target_interpolate_by_factor: 0.25
+      ++problem_trafos.dataset_trafo.mask_accelerations: 4.0,8.0,12.0,16.0
+      ++reconstruction.variational.regularization.reg_strength: 0.0006
+      ++representation.opt_params.subset_size: 400_000
+  launcher:
+    ray:
+      remote:
+        num_gpus: 1
+
+note: ""
+descr_short: "fig5_recon_dense_${representation.name}_${diffmodels.model_key}_${problem_trafos.dataset_trafo.mask_accelerations}"

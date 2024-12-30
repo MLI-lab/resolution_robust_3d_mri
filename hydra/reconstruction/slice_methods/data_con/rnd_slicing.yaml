@@ -1,0 +1,17 @@
+defaults:
+  - base
+
+name: rnd_slicing
+slices_discrete: True
+random_downsample_mesh : False
+random_downsample_mesh_range: [0.1, 1.0]
+grid_aligned: null
+slice_budget: 50
+slab_thickness:  5 
+slice_stride: 0
+volume_indices: [2] # Z, Y, X
+slice_enabled: [True]
+average_slabs: [False]
+swapaxis: [False]
+rnd_indices: [True]
+keep_dims: [True]

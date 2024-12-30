@@ -1,0 +1,30 @@
+name: ???
+
+use_filterbackproj_as_init: True
+use_l1wavelet_as_init: False
+
+arch: 
+  out_features: 2
+
+warmstart_optim: null 
+
+mesh_data:
+  matrix_size: null
+  field_of_view: null
+  max_coord: 1.0
+  requires_coords: False
+  mesh_jitter_enable : false
+  mesh_jitter_is_int : false
+  mesh_jitter_bounds : null
+
+mesh_prior_use_same_as_data: false
+use_high_res_mesh_for_rep: true
+
+mesh_prior:
+  matrix_size: null
+  field_of_view: null
+  max_coord: 1.0
+  requires_coords: False
+  mesh_jitter_enable : false
+  mesh_jitter_is_int : false
+  mesh_jitter_bounds : null

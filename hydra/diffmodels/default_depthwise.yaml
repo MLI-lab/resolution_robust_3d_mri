@@ -1,0 +1,5 @@
+defaults:
+  - base
+  - arch: depthwise_dm
+  - sde: default
+  - sampler: ddim

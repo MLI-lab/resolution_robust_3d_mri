@@ -1,0 +1,5 @@
+defaults:
+  - fwd_trafo: identity
+  - prior_trafo: identity
+  - target_trafo: identity
+  - dataset_trafo: null

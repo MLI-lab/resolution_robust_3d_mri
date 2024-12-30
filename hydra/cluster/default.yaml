@@ -1,0 +1,12 @@
+# @package _global_
+
+cluster_name: default
+dataset_cache: ./cache
+
+hydra:
+  job:
+    chdir: True
+  run:
+    dir: ./outputs/${hydra:runtime.choices.exps}/${now:%Y-%m-%dT%H:%M:%S.%fZ}_${descr_short}
+  sweep:
+    dir: ./outputs/multirun/${now:%Y-%m-%dT%H:%M:%S.%fZ}_${descr_short}
